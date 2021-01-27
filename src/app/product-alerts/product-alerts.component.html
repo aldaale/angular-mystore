@@ -1,1 +1,6 @@
-<p>product-alerts works!</p>
+<p *ngIf="product.price > 700">
+    <button class="btn btn-outline-primary btn-sm"
+    (click)="notify.emit()">
+    <i class="fas fa-sms"></i>
+     Notify Me</button>
+  </p>

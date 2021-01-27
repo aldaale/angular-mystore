@@ -14,6 +14,7 @@ import { TopBarComponent } from './top-bar/top-bar.component';
 // import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
+// import { FontAwesomeModule } from '@fortawesome/free-solid-svg-icons';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { RouterModule } from '@angular/router';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    // FontAwesomeModule,
        RouterModule.forRoot([
       { path: '', component: ProductListComponent },
       { path: 'products/:productId', component: ProductDetailsComponent },
