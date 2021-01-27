@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BackbtnComponent } from './backbtn/backbtn.component';
@@ -11,7 +11,9 @@ import { ProductListComponent } from './product-list/product-list.component';
 import { ShippingComponent } from './shipping/shipping.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
 
-
+// import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -23,12 +25,20 @@ import { TopBarComponent } from './top-bar/top-bar.component';
     ProductListComponent,
     ShippingComponent,
     TopBarComponent,
-
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+       RouterModule.forRoot([
+      { path: '', component: ProductListComponent },
+      { path: 'products/:productId', component: ProductDetailsComponent },
+      { path: 'cart', component: CartComponent },
+      { path: 'shipping', component: ShippingComponent },
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]
